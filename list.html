@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <title>Library Registers</title>
+<style>
+
+  body{
+  background: linear-gradient(white,red)no-repeat;
+    height: 100vh;
+  }
+  a{
+     text-decoration: none;
+    color: #01010e;
+    border: white;
+    padding: 5px;
+    align-self:baseline;
+  }
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+tr:nth-child(even) {
+  background-color: rgba(219, 75, 166, 0.87);
+}
+tr:nth-child(odd) {
+ background-color: #fff;
+}
+th {
+  background-color: black;
+  color: #ffffff;
+}
+</style>
+</head>
+<body>
+<div class="collapse">
+<h2>Styling Tables</h2>
+
+<br>
+<button>
+<a name="home" href="/">Home</a></button>
+<form action=" " method="get"  >
+<table id="t01">
+  <tr>
+    <th>ID</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Action</th>
+  </tr>
+{%for r in res%}
+  <tr>
+    <td>{{r.id}}</td>
+    <td>{{r.first_name}}</td>
+    <td>{{r.last_name}}</td>
+    <td>{{r.email}}</td>
+    <td>{{r.phone}}</td>
+
+    <td colspan="2" align="center" >
+      <button style="background: yellow"><a name="delete" href="/edit/{{r.id}}">edit</a></button>
+      <button style="background: red"><a name="delete" href="/delete/{{r.id}}">del</a></button>
+    </td>
+{%endfor%}
+  </tr>
+</table>
+<button style="background: #0f8202"><a name="Add" href="/reg">Add new member</a></button>
+</form>
+  </div>
+</body>
+</html>

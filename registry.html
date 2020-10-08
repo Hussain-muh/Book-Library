@@ -1,0 +1,71 @@
+<html>
+    <head>
+          <title>Registration</title>
+        <style>
+
+
+            body {
+                height: 100vh;
+                background: linear-gradient(to bottom, #e5d3ef, #fb3182) no-repeat;
+                display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ table{
+     background: linear-gradient(to right, #7927b2, #fb3182);
+     mask-border: inherit;
+    border-collapse:initial;
+ }
+ td,th{
+     background-color: rgba(248, 191, 191, 0.8);
+     padding: 15px;
+     color: #020202;
+ }
+  a{
+    text-decoration: none;
+    border: white;
+    padding: 5px;
+  }
+        </style>
+        <title>HTML Table</title>
+    </head>
+<body>
+
+<form method="post" action="/{{action}}">
+<table border="0" align="center" width="400" >
+<caption>Registration form</caption>
+<tr>
+<th>Enter your first name</th>
+<td><input value="{{users.first_name}}" type="text" name="firstname" id="fn1" maxlength="10" title="First name" placeholder="First name" required></td>
+</tr>
+<tr>
+<th>Enter your last name</th>
+<td><input value="{{users.last_name}}" type="text" placeholder="Last name" name="lastname" required></td>
+</tr>
+<tr>
+<th>Enter your email</th>
+<td><input  value="{{users.email}}" type="email" placeholder="Email" name="email" required ></td>
+</tr>
+<tr>
+<th>Enter your phone number</th>
+<td><input value="{{users.phone}}" type="number" placeholder="phone number" name="phone" required ></td>
+</tr>
+<input value="{{users.id}}" type="hidden"  name="id"  >
+<tr>
+<td colspan="2" align="center">
+    {% if users == None %}
+    <input type="submit" value="Save Member">
+    {% else%}
+    <input type="submit" value="Update data ">
+    {% endif %}
+    <input type="reset" value="Reset Data"/>
+</td>
+
+<button>
+<a name="home" href="/">Home</a>
+</button>
+</tr>
+</table>
+</form>
+</body>
+</html>
